@@ -1,0 +1,30 @@
+#include <stdio.h>
+ 
+void  tsikl(float *x, float *y){
+   *x=*x+*y;
+    *y=*x-*y;
+    *x=*x-*y;
+}
+ 
+void shiftright3(float *a, float *b, float *c){
+   tsikl(a,b);
+   tsikl(c,a);
+}
+ 
+int main(void)
+{
+    int i;
+    for (i=1;i<=2;++i){
+        float a,b,c;
+        printf("A:");
+        scanf("%f", &a);
+        printf("B:");
+        scanf("%f", &b);
+        printf("C:");
+        scanf("%f", &c);
+ 
+        shiftright3(&a,&b,&c);
+        printf("A:%f; B:%f; C:%f\n",a,b,c);
+    }
+    return 0;
+}
